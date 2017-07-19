@@ -1,0 +1,5 @@
+baseurl = "http://codaproductions.co.uk/"
+languageCode = "en-gb"
+title = "Coda Productions"
+PluralizeListTitles=false
+canonifyurls = false
