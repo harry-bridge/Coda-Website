@@ -1,31 +1,30 @@
 language: go
 go:
-  - 1.5
+- 1.5
 sudo: false
 install:
-  # - go get -v github.com/spf13/hugo/
-  - _bin/hugo.sh
-  - _bin/htmltest.sh
-  - gem install bundler
-  - bundle install --without development --deployment --jobs=3 --retry=3 --binstubs
-  - curl https://f000.backblazeb2.com/file/wjdp-lib/htmltest > _bin/htmltest
-  - chmod +x _bin/htmltest
+- _bin/hugo.sh
+- _bin/htmltest.sh
+- gem install bundler
+- bundle install --without development --deployment --jobs=3 --retry=3 --binstubs
+- curl https://f000.backblazeb2.com/file/wjdp-lib/htmltest > _bin/htmltest
+- chmod +x _bin/htmltest
 cache:
   directories:
   - vendor/bundle
 script:
- - bin/compass compile -e production --force
- - ~/hugo018 version
- - ~/hugo018
- - ~/htmltest --version
- - ~/htmltest public
+- bin/compass compile -e production --force
+- "~/hugo018 version"
+- "~/hugo018"
+- "~/htmltest --version"
+- "~/htmltest public"
 after_script:
-  - _bin/deploy.sh
+- _bin/deploy.sh
 branches:
   only:
   - master
 env:
   global:
-    - RESET=true
-    - GH_REF=github.com/pickleshb/Coda-Website.git
-    - secure: "v8nJD0Zby2Mt5qumJhe2wHTnlJqek7wZK7nM4HBZzcNJHYmpfCZIZZbNE1dU+ndQS2oxbTfxIXyxQTeHeUe5k3uKNXMaKIQPGlGBxxhTHG927ESzDk1Kz7M68l0pH9eeXhYy2xn6FuzyLxNi/sUsIx5WikBTVF6VgcDOcgdQfHBl2+WAjVvDVSuHWHpUhqw4WozhUw+xGs+0+8T4h2j/LeOefLBsb2UHC1mlWiTUPoutpMsxvFLq6juUUIb1fHQfxIqMQqm5Yr+eGXOMraxFNSXD7gxgS7QZAGeFGTIRye4rTce8KR/tOC/5ReBXcbgeH4LFCPxE/00psNXuyqAoEYgEhPCqD8JN3AFSW12dRdX9ORteDAuCy/l3l8XN+PHloH7tPVFsQJMeJlTB1NfeqxWO/uBQ8rMizyeu1kdZvbL80hMQcSeAtS1x1tgp4Pl+2EG94peaASoaH7Z3Ewoq5WlIOF5lbWineKF4072gu90/7JGiU9IMJnoPqpIjSyw7lOUPCv8Yp3qJUb+5mNPGUUS8Y+HF37f6okC8JVklxl11l4MgL5/SOlI3pLTke08jmbtv5TxI6HLmm00BbET79gwd31PV82/RQZ+EfgX0rtV6C7RteEtmfkSDImZfiLTobmovaoHb6Fu3HxmQ91pBGzcVMWbc89K7wGP/ZZwfHf0="
+  - RESET=true
+  - GH_REF=github.com/pickleshb/Coda-Website.git
+  - secure: FIPGZ7GwSvuw64J2L0brZeDoycusE3Jyj3eTpiPT6FsY68qjsYBLzJ83fumsR2sUh4TPTk0t5cIGcOJbiYXA3EHUT7FHD8N2a4f6jkIkBftr3CQgF2HwNil9scGA3Y2wuN3eU17ftcVXKoRhX7XRnbCEAYBKezEn/ZpGBbfNkcTCDfjTqscnoa41tsmHeE+iuI9r9XIHGHAiJx9C+g6K/hCnz+OwPIfB3IaDzp/FowbBDX+/JXJ4im7OZv6GipWDKzCT75NaHXxOrKmCj2QW96u++uKFAPAyFg23iqHTqS97NRvBqm7uHDotSOYRJkNZlaRiovgckDHr3Y6+A4bgz6aZ1x8HmjnhUmg4g5yGpUrwmMUGzt1/Hq9/2YZLZXhuuD2HXQmgiyOVmoHx3lpZtMRqjBLgYhhn97/AZhucpiM+mRrzRELK009vre+qcvGiMzsd1snHFIM51EUIxsXUx1XjDzMqDk1FxmbaOtSMDPHLfUEGsGF9pZHW8GmDFGlFix9LAMCb74rrt/YJe/Ra+KeXH5HpHNO0JNWFPwZ3EH47Hwyh6Qvnb7IDh2UPAUl1oY/sGEOgAgxGxJsb6zhVPxWRfg16V5yxE7mCJiBLvYxwMd5ndf3OlEynCLOkh4Tupze60E6sZsAwLBMODIN6DNYRIU7rZ6zQX03pPFoyCNA=
