@@ -18,7 +18,7 @@ script:
  - ~/hugo018 version
  - ~/hugo018
  - ~/htmltest --version
- - ~/htmltest
+ - ~/htmltest public
 after_script:
   - _bin/deploy.sh
 branches:
